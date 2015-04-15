@@ -1,5 +1,5 @@
 Copying tests/userprog/args-multiple to scratch partition...
-qemu -hda /tmp/7P6sPqkzlw.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/Jd6uLrrEx1.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run 'args-multiple some arguments for you!'
@@ -30,8 +30,8 @@ Executing 'args-multiple some arguments for you!':
 (args) end
 args-multiple: exit(0)
 Execution of 'args-multiple some arguments for you!' complete.
-Timer: 68 ticks
-Thread: 35 idle ticks, 31 kernel ticks, 3 user ticks
+Timer: 72 ticks
+Thread: 40 idle ticks, 29 kernel ticks, 3 user ticks
 hda2 (filesys): 63 reads, 186 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 1139 characters output

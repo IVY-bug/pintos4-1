@@ -1,6 +1,6 @@
 Copying tests/userprog/write-boundary to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-qemu -hda /tmp/7uLG3xwDU6.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/SFX3f58SHo.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run write-boundary
@@ -26,8 +26,8 @@ Executing 'write-boundary':
 (write-boundary) end
 write-boundary: exit(0)
 Execution of 'write-boundary' complete.
-Timer: 71 ticks
-Thread: 37 idle ticks, 31 kernel ticks, 3 user ticks
+Timer: 70 ticks
+Thread: 40 idle ticks, 28 kernel ticks, 2 user ticks
 hda2 (filesys): 95 reads, 201 writes
 hda3 (scratch): 96 reads, 2 writes
 Console: 999 characters output

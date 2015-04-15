@@ -1,5 +1,5 @@
 Copying tests/userprog/bad-write to scratch partition...
-qemu -hda /tmp/yVSlUYETkB.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/Jw09zz5mQC.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run bad-write
@@ -30,7 +30,7 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x80480a3
 bad-write: exit(-1)
 Execution of 'bad-write' complete.
 Timer: 69 ticks
-Thread: 36 idle ticks, 29 kernel ticks, 4 user ticks
+Thread: 38 idle ticks, 28 kernel ticks, 3 user ticks
 hda2 (filesys): 63 reads, 186 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 1228 characters output

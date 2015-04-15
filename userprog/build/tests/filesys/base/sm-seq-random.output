@@ -1,5 +1,5 @@
 Copying tests/filesys/base/sm-seq-random to scratch partition...
-qemu -hda /tmp/bKP8FM17Hk.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/PY7usGqgHV.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run sm-seq-random
@@ -30,8 +30,8 @@ Executing 'sm-seq-random':
 (sm-seq-random) end
 sm-seq-random: exit(0)
 Execution of 'sm-seq-random' complete.
-Timer: 72 ticks
-Thread: 34 idle ticks, 32 kernel ticks, 6 user ticks
+Timer: 80 ticks
+Thread: 41 idle ticks, 36 kernel ticks, 3 user ticks
 hda2 (filesys): 119 reads, 230 writes
 hda3 (scratch): 94 reads, 2 writes
 Console: 1163 characters output

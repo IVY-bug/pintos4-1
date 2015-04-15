@@ -1,5 +1,5 @@
 Copying tests/filesys/base/lg-random to scratch partition...
-qemu -hda /tmp/NyEkHePIB4.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/0ByfFpTBmE.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run lg-random
@@ -28,11 +28,11 @@ Executing 'lg-random':
 (lg-random) end
 lg-random: exit(0)
 Execution of 'lg-random' complete.
-Timer: 83 ticks
-Thread: 46 idle ticks, 30 kernel ticks, 7 user ticks
+Timer: 114 ticks
+Thread: 66 idle ticks, 33 kernel ticks, 16 user ticks
 hda2 (filesys): 233 reads, 502 writes
 hda3 (scratch): 96 reads, 2 writes
-Console: 1051 characters output
+Console: 1053 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,0 +1,36 @@
+qemu -hda /tmp/rhLrNWbjrN.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading...........
+Kernel command line: -q run 'tar fs.tar /' append fs.tar
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 3,024 sectors (1 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 184 sectors (92 kB), Pintos OS kernel (20)
+hda2: 2,048 sectors (1 MB), Pintos scratch (22)
+hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
+hdb1: 4,096 sectors (2 MB), Pintos file system (21)
+filesys: using hdb1
+scratch: using hda2
+Boot complete.
+Executing 'tar fs.tar /':
+Page fault at 0x7ffffd68: not present error writing page in user context.
+tar: dying due to interrupt 0x0e (#PF Page-Fault Exception).
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x804affe
+ cr2=7ffffd68 error=00000006
+ eax=bffffeb4 ebx=00000001 ecx=00000002 edx=00000080
+ esi=00000001 edi=bfffffe0 esp=bffffe70 ebp=00000080
+ cs=001b ds=0023 es=0023 ss=0023
+tar: exit(-1)
+Execution of 'tar fs.tar /' complete.
+Appending 'fs.tar' to ustar archive on scratch device...
+Timer: 62 ticks
+Thread: 32 idle ticks, 27 kernel ticks, 3 user ticks
+hdb1 (filesys): 41 reads, 1 writes
+hda2 (scratch): 0 reads, 3 writes
+Console: 1179 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+Copying tests/filesys/extended/dir-rm-tree.tar out of /tmp/rhLrNWbjrN.dsk...

@@ -1,5 +1,5 @@
 Copying tests/userprog/open-bad-ptr to scratch partition...
-qemu -hda /tmp/nYYC0yRQT9.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/qlua4P5TVq.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run open-bad-ptr

@@ -1,6 +1,6 @@
 Copying tests/userprog/rox-multichild to scratch partition...
 Copying tests/userprog/child-rox to scratch partition...
-qemu -hda /tmp/nx4pdlraaw.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/f3PQQfncgq.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run rox-multichild
@@ -59,8 +59,8 @@ child-rox: exit(12)
 (rox-multichild) end
 rox-multichild: exit(0)
 Execution of 'rox-multichild' complete.
-Timer: 93 ticks
-Thread: 43 idle ticks, 34 kernel ticks, 16 user ticks
+Timer: 95 ticks
+Thread: 47 idle ticks, 33 kernel ticks, 15 user ticks
 hda2 (filesys): 302 reads, 398 writes
 hda3 (scratch): 194 reads, 2 writes
 Console: 1905 characters output
