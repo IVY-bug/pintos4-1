@@ -1,15 +1,15 @@
 Copying tests/filesys/extended/grow-tell to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/OQyevRKgNN.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/2L8Ifc9EtK.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run grow-tell
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  156,672,000 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 184 sectors (92 kB), Pintos OS kernel (20)
+hda1: 185 sectors (92 kB), Pintos OS kernel (20)
 hda2: 206 sectors (103 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -26,14 +26,18 @@ Executing 'grow-tell':
 (grow-tell) create "foobar"
 (grow-tell) open "foobar"
 (grow-tell) writing "foobar"
-(grow-tell) write 37 bytes at offset 0 in "foobar" failed: FAILED
-grow-tell: exit(1)
+(grow-tell) close "foobar"
+(grow-tell) open "foobar" for verification
+(grow-tell) verified contents of "foobar"
+(grow-tell) close "foobar"
+(grow-tell) end
+grow-tell: exit(0)
 Execution of 'grow-tell' complete.
-Timer: 89 ticks
-Thread: 44 idle ticks, 42 kernel ticks, 3 user ticks
-hdb1 (filesys): 228 reads, 355 writes
+Timer: 92 ticks
+Thread: 49 idle ticks, 40 kernel ticks, 4 user ticks
+hdb1 (filesys): 463 reads, 383 writes
 hda2 (scratch): 205 reads, 2 writes
-Console: 1128 characters output
+Console: 1217 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

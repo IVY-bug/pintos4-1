@@ -1,4 +1,4 @@
-qemu -hda /tmp/RFxqmiFu1P.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/t7UZOF2xuE.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q run 'tar fs.tar /' append fs.tar
@@ -7,7 +7,7 @@ Pintos booting with 4,088 kB RAM...
 382 pages available in user pool.
 Calibrating timer...  157,081,600 loops/s.
 hda: 3,024 sectors (1 MB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 184 sectors (92 kB), Pintos OS kernel (20)
+hda1: 185 sectors (92 kB), Pintos OS kernel (20)
 hda2: 2,048 sectors (1 MB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -16,16 +16,15 @@ scratch: using hda2
 Boot complete.
 Executing 'tar fs.tar /':
 /: open failed
-error writing archive
 tar: exit(1)
 Execution of 'tar fs.tar /' complete.
 Appending 'fs.tar' to ustar archive on scratch device...
-Timer: 60 ticks
-Thread: 32 idle ticks, 27 kernel ticks, 1 user ticks
-hdb1 (filesys): 41 reads, 1 writes
-hda2 (scratch): 0 reads, 3 writes
-Console: 853 characters output
+Timer: 61 ticks
+Thread: 31 idle ticks, 26 kernel ticks, 4 user ticks
+hdb1 (filesys): 75 reads, 12 writes
+hda2 (scratch): 0 reads, 5 writes
+Console: 832 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
-Copying tests/filesys/extended/grow-tell.tar out of /tmp/RFxqmiFu1P.dsk...
+Copying tests/filesys/extended/grow-tell.tar out of /tmp/t7UZOF2xuE.dsk...

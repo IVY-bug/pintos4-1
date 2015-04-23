@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/grow-seq-lg to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/K8qKDm_mkJ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/G3fVMotviu.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run grow-seq-lg
@@ -9,7 +9,7 @@ Pintos booting with 4,088 kB RAM...
 382 pages available in user pool.
 Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 184 sectors (92 kB), Pintos OS kernel (20)
+hda1: 185 sectors (92 kB), Pintos OS kernel (20)
 hda2: 206 sectors (103 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -26,14 +26,18 @@ Executing 'grow-seq-lg':
 (grow-seq-lg) create "testme"
 (grow-seq-lg) open "testme"
 (grow-seq-lg) writing "testme"
-(grow-seq-lg) write 1234 bytes at offset 0 in "testme" failed: FAILED
-grow-seq-lg: exit(1)
+(grow-seq-lg) close "testme"
+(grow-seq-lg) open "testme" for verification
+(grow-seq-lg) verified contents of "testme"
+(grow-seq-lg) close "testme"
+(grow-seq-lg) end
+grow-seq-lg: exit(0)
 Execution of 'grow-seq-lg' complete.
-Timer: 82 ticks
-Thread: 42 idle ticks, 37 kernel ticks, 3 user ticks
-hdb1 (filesys): 228 reads, 355 writes
+Timer: 133 ticks
+Thread: 64 idle ticks, 47 kernel ticks, 22 user ticks
+hdb1 (filesys): 1177 reads, 770 writes
 hda2 (scratch): 205 reads, 2 writes
-Console: 1150 characters output
+Console: 1248 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

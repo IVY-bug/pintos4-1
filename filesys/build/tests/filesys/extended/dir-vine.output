@@ -1,15 +1,15 @@
 Copying tests/filesys/extended/dir-vine to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/pnOUxG45Y7.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/7mHdyMhv4l.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run dir-vine
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  183,296,000 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 184 sectors (92 kB), Pintos OS kernel (20)
+hda1: 185 sectors (92 kB), Pintos OS kernel (20)
 hda2: 210 sectors (105 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -24,14 +24,14 @@ Erasing ustar archive...
 Executing 'dir-vine':
 (dir-vine) begin
 (dir-vine) creating many levels of files and directories...
-(dir-vine) created files and directories only to level 0: FAILED
+(dir-vine) open ".": FAILED
 dir-vine: exit(1)
 Execution of 'dir-vine' complete.
-Timer: 83 ticks
-Thread: 45 idle ticks, 36 kernel ticks, 2 user ticks
-hdb1 (filesys): 233 reads, 363 writes
+Timer: 89 ticks
+Thread: 43 idle ticks, 44 kernel ticks, 2 user ticks
+hdb1 (filesys): 458 reads, 381 writes
 hda2 (scratch): 209 reads, 2 writes
-Console: 1098 characters output
+Console: 1061 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/dir-rm-tree to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/8S3DusVen9.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/AkyBIK3eg9.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -f extract run dir-rm-tree
@@ -9,7 +9,7 @@ Pintos booting with 4,088 kB RAM...
 382 pages available in user pool.
 Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 184 sectors (92 kB), Pintos OS kernel (20)
+hda1: 185 sectors (92 kB), Pintos OS kernel (20)
 hda2: 213 sectors (106 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -24,14 +24,17 @@ Erasing ustar archive...
 Executing 'dir-rm-tree':
 (dir-rm-tree) begin
 (dir-rm-tree) creating /0/0/0/0 through /3/2/2/3...
-(dir-rm-tree) create "/0/1/0/2": FAILED
+(dir-rm-tree) open "/0/2/0/3"
+(dir-rm-tree) close "/0/2/0/3"
+(dir-rm-tree) removing /0/0/0/0 through /3/2/2/3...
+(dir-rm-tree) remove "/0/0/0": FAILED
 dir-rm-tree: exit(1)
 Execution of 'dir-rm-tree' complete.
-Timer: 85 ticks
-Thread: 44 idle ticks, 38 kernel ticks, 4 user ticks
-hdb1 (filesys): 248 reads, 383 writes
+Timer: 195 ticks
+Thread: 89 idle ticks, 42 kernel ticks, 64 user ticks
+hdb1 (filesys): 2601 reads, 685 writes
 hda2 (scratch): 212 reads, 2 writes
-Console: 1083 characters output
+Console: 1197 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
