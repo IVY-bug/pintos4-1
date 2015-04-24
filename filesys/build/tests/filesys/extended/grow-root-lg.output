@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/grow-root-lg to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/P6GmAxCQ9L.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/PG5ayGI8wz.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run grow-root-lg
@@ -76,11 +76,11 @@ Executing 'grow-root-lg':
 (grow-root-lg) end
 grow-root-lg: exit(0)
 Execution of 'grow-root-lg' complete.
-Timer: 144 ticks
-Thread: 56 idle ticks, 46 kernel ticks, 42 user ticks
+Timer: 222 ticks
+Thread: 113 idle ticks, 57 kernel ticks, 52 user ticks
 hdb1 (filesys): 753 reads, 836 writes
 hda2 (scratch): 206 reads, 2 writes
-Console: 3308 characters output
+Console: 3309 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

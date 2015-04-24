@@ -155,7 +155,8 @@ thread_init (void)
   init_thread (initial_thread, "main", PRI_DEFAULT);
   initial_thread->status = THREAD_RUNNING;
   initial_thread->tid = allocate_tid ();
- 
+//
+  initial_thread->cwd = NULL; 
 #ifdef USERPROG
    list_init (&initial_thread->children_data);
 #endif
@@ -277,6 +278,14 @@ thread_create (const char *name, int priority,
 
   struct child_process *chp = add_child(t->tid);
   t->chp = chp;
+  
+  // Child current working direntory shoud inherit from parent.
+  if (thread_current()->cwd)
+   {
+      t->cwd = dir_reopen(thread_current()->cwd);
+   }else{
+      t->cwd = NULL;
+   }
 
   /* Add to run queue. */
   thread_unblock (t);

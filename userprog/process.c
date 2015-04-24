@@ -389,7 +389,10 @@ cond_signal (chp->condition, chp->wait_lock);
 //   {
 ///      cur->chp->exit = true;  
 //   } 
-  
+  if (thread_current()->cwd)
+  {
+     dir_close(thread_current()->cwd);
+  }  
   printf("%s: exit(%d)\n", cur->name, cur->exit_status);  
   
   /* Destroy the current process's page directory and switch back

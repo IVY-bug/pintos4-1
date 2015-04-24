@@ -1,12 +1,12 @@
 Copying tests/filesys/base/sm-full to scratch partition...
-qemu -hda /tmp/0u18WtSUHz.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/6C9Avlbj32.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run sm-full
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  126,361,600 loops/s.
+Calibrating timer...  142,336,000 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -30,8 +30,8 @@ Executing 'sm-full':
 (sm-full) end
 sm-full: exit(0)
 Execution of 'sm-full' complete.
-Timer: 93 ticks
-Thread: 46 idle ticks, 44 kernel ticks, 3 user ticks
+Timer: 94 ticks
+Thread: 47 idle ticks, 42 kernel ticks, 5 user ticks
 hda2 (filesys): 269 reads, 233 writes
 hda3 (scratch): 94 reads, 2 writes
 Console: 1065 characters output

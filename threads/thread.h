@@ -152,6 +152,9 @@ struct thread
    bool child_create_error;
    struct list children_data;
    int exit_status;
+
+   struct dir *cwd;
+
   };
 
   struct child_thread_data {

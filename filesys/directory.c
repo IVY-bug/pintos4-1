@@ -6,6 +6,7 @@
 #include "filesys/inode.h"
 #include "threads/malloc.h"
 
+bool dir_is_empty (struct inode *inode);
 /* A directory. */
 struct dir 
   {
@@ -152,6 +153,7 @@ dir_add (struct dir *dir, const char *name, block_sector_t inode_sector)
   if (*name == '\0' || strlen (name) > NAME_MAX)
     return false;
 
+  inode_lock (dir_get_inode(dir));
   /* Check that NAME is not in use. */
   if (lookup (dir, name, NULL, NULL))
     goto done;
@@ -180,6 +182,7 @@ dir_add (struct dir *dir, const char *name, block_sector_t inode_sector)
   success = inode_write_at (dir->inode, &e, sizeof e, ofs) == sizeof e;
 
  done:
+  inode_unlock (dir_get_inode(dir));
   return success;
 }
 
@@ -204,6 +207,12 @@ dir_remove (struct dir *dir, const char *name)
   /* Open inode. */
   inode = inode_open (e.inode_sector);
   if (inode == NULL)
+    goto done;
+
+  if (inode_is_dir(inode) && inode_get_open_cnt(inode) > 1 )
+    goto done;
+
+  if (inode_is_dir(inode) && !dir_is_empty(inode))
     goto done;
 
   /* Erase directory entry. */
@@ -245,7 +254,7 @@ bool
 dir_get_parent (struct dir *dir, struct inode **inode)
 {
     block_sector_t sector = inode_get_parent (dir_get_inode(dir));
-    *inode = inode = inode_open(sector);
+    *inode  = inode_open(sector);
     return *inode != NULL;
 }
 
@@ -263,4 +272,18 @@ dir_is_root (struct dir* dir)
    return false;
 }
 
+bool dir_is_empty (struct inode *inode)
+{
+  struct dir_entry e;
+  off_t pos = 0;
 
+  while (inode_read_at (inode, &e, sizeof e, pos) == sizeof e) 
+    {
+      pos += sizeof e;
+      if (e.in_use)
+        {
+          return false;
+        } 
+    }
+  return true;
+}

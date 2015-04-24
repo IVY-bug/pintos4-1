@@ -8,7 +8,7 @@
 
 #define CACHE_AMOUNT 64
 #define FLUSH_BACK_INTERVAL 5*TIMER_FREQ
-
+#define MAX_CACHE_SIZE 64
 struct cache_block
 {
     block_sector_t sector;

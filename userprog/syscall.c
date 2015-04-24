@@ -13,13 +13,15 @@
 
 static void syscall_handler (struct intr_frame *);
 struct lock file_lock; //lock for handing file sys
-
+int user_to_kernel_ptr (const void *vaddr);
 //File structre
 struct file_struct
 {
 	struct file* file; //file pointer
 	int file_desc;     //file discriptor
 	struct list_elem elem;
+	bool isdir;
+	struct dir *dir;
 };
 
 void
@@ -55,7 +57,29 @@ get_file_handle (int file_desc)
    return NULL;
 
 }
+//get file struct
+struct file_struct*
+get_file_struct_handle (int file_desc)
+{
+	//printf("file handle 1\n");
+   struct list_elem *e = list_begin (&thread_current()->files_owned_list);
+   struct list_elem *next;
+   while (e != list_end (&thread_current()->files_owned_list))
+   {
 
+     struct file_struct *f = list_entry (e, struct file_struct,
+                                          elem);
+     next = list_next(e);
+     if (file_desc == f->file_desc)
+       {
+       //	printf("file handle 2\n");
+        return f;
+       }
+     e = next;
+   }
+   return NULL;
+
+}
 
 void
 syscall_init (void) 
@@ -111,8 +135,16 @@ sys_close (int file_desc)
 unsigned
 sys_tell (int file_desc)
 {
-	struct file *file_ptr = get_file_handle (file_desc);
-	unsigned cursor = file_tell (file_ptr);
+	struct file_struct *file_ptr = get_file_struct_handle (file_desc);
+	if (!file_ptr)
+        {
+ 	    return -1;
+        }
+        if (file_ptr->isdir)
+        {
+	    return -1;
+        }
+        unsigned cursor = file_tell (file_ptr->file);
 	return cursor;
 }
 
@@ -120,8 +152,18 @@ void
 sys_seek (int file_desc, unsigned offset)
 {
 	lock_acquire (&file_lock);
-	struct file *file_ptr = get_file_handle (file_desc); 
-	file_seek (file_ptr, offset);	
+	struct file_struct *file_ptr = get_file_struct_handle (file_desc); 
+        if (!file_ptr)
+        {
+	   lock_release(&file_lock);
+            return;
+        }
+	if (file_ptr->isdir)
+	{
+	    lock_release (&file_lock);
+            return;
+	}
+	file_seek (file_ptr->file, offset);	
 	lock_release (&file_lock);
 }
 
@@ -142,16 +184,20 @@ sys_read (int file_desc, char *buf, unsigned s)
 		 		 	return s; 
 		 		 }
 		 }
-        lock_acquire (&file_lock);	
-	struct file* file_ptr = get_file_handle (file_desc);
+//        lock_acquire (&file_lock);	
+	struct file_struct* file_ptr = get_file_struct_handle (file_desc);
 	if (file_ptr == NULL)
 	{
-		lock_release (&file_lock);
+//		lock_release (&file_lock);
 		return -1;
 	}
+        if (file_ptr->isdir){
+//               lock_release (&file_lock);
+		return -1;
+        }
 	//printf("Got Fd...\n");
-	off_t bytes_read = file_read (file_ptr, buf, s);
-	lock_release (&file_lock);
+	off_t bytes_read = file_read (file_ptr->file, buf, s);
+//	lock_release (&file_lock);
 	return bytes_read;
 
 }
@@ -169,9 +215,9 @@ sys_filesize (int file_desc)
 bool
 sys_remove (const char *file)
 {
-	lock_acquire (&file_lock);
+//	lock_acquire (&file_lock);
 	bool status = filesys_remove (file);
-	lock_release (&file_lock);
+//	lock_release (&file_lock);
 	return status;	
 }
 
@@ -185,7 +231,7 @@ sys_create (const char *file, unsigned size)
 	validate_ptr (file);
 	validate_page (file);
 //	lock_acquire (&file_lock);
-	bool status = filesys_create (file, size);
+	bool status = filesys_create (file, size, false);
 //	lock_release (&file_lock);
 	return status;
 }
@@ -236,13 +282,13 @@ sys_open (const char *file)
 		 }
 	validate_ptr (file);	 
 	validate_page (file);	 
-	lock_acquire (&file_lock);
+//	lock_acquire (&file_lock);
 	struct file *handle = filesys_open (file);
 
 	if (handle == NULL)
 		 {
 	//	 	printf("handle null...\n");
-		 	lock_release (&file_lock);
+//		 	lock_release (&file_lock);
 		 	//sys_exit(-1);
 		 	return -1;
 		 }
@@ -250,23 +296,34 @@ sys_open (const char *file)
 	struct file_struct *file_ptr = malloc (sizeof (struct file_struct));
 	if (file_ptr == NULL)
 		 {
-		 	//Should close file here.............
 	//	 	printf("no memory allocated..\n");
-		 	lock_release (&file_lock);
+//		 	lock_release (&file_lock);
 		 	return -1;
 		 }
+        
 	file_ptr->file_desc = thread_current ()->file_desc;
 	//so that on opening twice it gives diff fd
 	thread_current ()->file_desc++; 
-	file_ptr->file = handle;
+   /*
+    * Based on the different file type.
+    *
+    */
+       if (inode_is_dir (file_get_inode (handle))){
+           file_ptr->dir = (struct dir *)handle;
+	   file_ptr->isdir = true;
+       }else{
+           file_ptr->file = handle;
+	   file_ptr->isdir = false;
+       }	
+
 	list_push_back (&thread_current ()->files_owned_list , &file_ptr->elem);
 	//check for file name with thread name for rox-* tests
 	if (strcmp (file, thread_current ()->name) == 0)
 	 {
-	 	file_deny_write (handle);
+	    	file_deny_write (handle);
 	 }
 
-	lock_release (&file_lock);	 
+//	lock_release (&file_lock);	 
 
 
 /*
@@ -298,20 +355,104 @@ sys_write (int file_desc, const void *buffer, unsigned size)
 	 	return size;
 	 }
 
-	 lock_acquire (&file_lock);
-	 struct file *file_ptr = get_file_handle (file_desc);
+//	 lock_acquire (&file_lock);
+	// struct file *file_ptr = get_file_handle (file_desc);
 	// printf("write 2\n");
 	 //if lock doesn't acquired then return
-	 if (file_ptr == NULL)
+	 struct file_struct *file_struct = get_file_struct_handle (file_desc);
+         if (file_struct == NULL)
 	 	 {
-	 	 	lock_release (&file_lock);
+//	 	 	lock_release (&file_lock);
 	 	 	sys_exit (-1);
 	 	 }
+ 
 	// printf("write 3\n");	 
-	 int bytes_wrriten = file_write (file_ptr, buffer, size);
+         if (file_struct->isdir)
+         {
+//              lock_release(&file_lock);
+	      sys_exit(-1);
+         }
+
+	 int bytes_wrriten = file_write (file_struct->file, buffer, size);
 	// printf("Wrriten to file bytes:%d\n",bytes_wrriten );
-	 lock_release (&file_lock);
+//	 lock_release (&file_lock);
 	 return bytes_wrriten;	 
+}
+
+/*
+ * Change the current directory of process to the dir, which maybe
+ * relative or absolute
+ */
+bool
+chdir (const char *dir)
+{
+    return filesys_chdir (dir);
+}
+
+/*
+ * create directory named dir, which maybe relative or absolute. 
+ * fails if dir already exsit.
+ */
+bool
+mkdir (const char *dir)
+{
+     return filesys_create (dir, 0, true);
+}
+
+/*
+ * Reads a directory entry from file descriptor fd, which must 
+ * must represent a directory.
+ */
+bool
+readdir (int fd, char *name)
+{
+    struct file_struct* file_struct = get_file_struct_handle (fd);
+    if (!file_struct)
+    {
+ 	return false;
+    }
+    if (!file_struct->isdir)
+    {
+        return false;
+    }
+    if (!dir_readdir (file_struct->dir, name)){
+        return false;
+    }
+    return true;
+}
+
+/*
+ *
+ *  Returns true if fd represents a directory.
+ */
+bool
+isdir (int fd)
+{
+    struct file_struct* file_struct = get_file_struct_handle (fd);
+    if (file_struct == NULL){
+	return false;
+    } 
+    return file_struct->isdir;
+}
+
+/*
+ * An inode number persistently identifies a file or directory
+ */
+int
+inumber (int fd)
+{
+   struct file_struct* file_struct = get_file_struct_handle (fd);
+   if (!file_struct)
+   {
+      return -1;
+   }
+   block_sector_t number;
+   if (file_struct->isdir){
+      number = inode_get_inumber (dir_get_inode (file_struct->dir));
+   }else{
+      number = inode_get_inumber (file_get_inode (file_struct->file));
+   }
+  return number;
 }
 
 static void
@@ -412,7 +553,39 @@ syscall_handler (struct intr_frame *f UNUSED)
 		 	sys_close(arg[0]);
 		 	break;
 		 } 
-
+                case SYS_CHDIR:
+		 {
+                        get_arguments_from_stack (f, &arg[0], 1);
+			arg[0] = user_to_kernel_ptr ((const void *)arg[0]);
+			f->eax = chdir ((const char *)arg[0]);
+			break;				
+		 }
+		case SYS_MKDIR:
+		 {
+                        get_arguments_from_stack (f, &arg[0], 1);
+			arg[0] = user_to_kernel_ptr((const void *)arg[0]);
+			f->eax = mkdir ((const char *)arg[0]);
+			break;		
+		 }
+		case SYS_READDIR:
+		 {
+		       get_arguments_from_stack (f, &arg[0], 2);
+		       arg[1] = user_to_kernel_ptr((const void *)arg[1]);
+		       f->eax = readdir (arg[0], (char *)arg[1]);
+			break;
+		 }
+		case SYS_ISDIR:
+		 {
+                      get_arguments_from_stack (f, &arg[0],1);
+		      f->eax = isdir (arg[0]);
+		      break;		
+		 }
+		case SYS_INUMBER:
+		 {
+	             get_arguments_from_stack(f, &arg[0], 1);
+ 		     f->eax = inumber (arg[0]);
+ 		    break;	
+		 }
 	}
   
 }
@@ -464,6 +637,18 @@ validate_ptr (const void *addr)
 	
 }
 
+int
+user_to_kernel_ptr (const void *vaddr)
+{
+   validate_ptr (vaddr);
+   void *ptr = pagedir_get_page (thread_current ()->pagedir, vaddr);
+   if (!ptr)
+   {
+       sys_exit (-1);
+     }
+    return (int) ptr;
+}
+
 void
 close_all_files (void)
 {
@@ -474,7 +659,12 @@ close_all_files (void)
      struct file_struct *fs = list_entry (el, struct file_struct,
                                           elem);
      nxt = list_next(el);
-     file_close (fs->file);
+     if (fs->isdir){
+         dir_close(fs->dir);
+     }
+     else{
+        file_close (fs->file);
+     }
      list_remove (&fs->elem);
      free (fs);
      el = nxt;

@@ -108,10 +108,24 @@ struct cache_block* read_block_from_disk (block_sector_t sector, bool dirty)
  */
 struct cache_block* cache_block_evict (block_sector_t sector, bool dirty)
 {
+
     struct cache_block *c;
-    bool flag = true;
-    while (flag)
+    if (cache_size < MAX_CACHE_SIZE)
     {
+        cache_size++;
+        c = malloc (sizeof (struct cache_block));
+        if (!c)
+        {
+	    return NULL;
+	}
+	c->open_cnt = 0;
+	list_push_back (&cache, &c->elem);
+    }
+    else
+    {
+      bool flag = true;
+      while (flag)
+      {
         struct list_elem *e;
         for (e = list_begin (&cache); e != list_end (&cache); e = list_next(e))
         {
@@ -134,9 +148,10 @@ struct cache_block* cache_block_evict (block_sector_t sector, bool dirty)
 			break;
   		}
  	}
+      }
      }
     //pay attention to here!!!!!!!!
-    c->open_cnt = 1;
+    c->open_cnt++;
     c->sector = sector;
     block_read (fs_device, c->sector, &c->block);
     c->dirty = dirty;

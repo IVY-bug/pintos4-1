@@ -1,0 +1,2 @@
+Use of uninitialized value in numeric le (<=) at /course/cs5600sp15/pintos/bin/pintos line 838.
+qemu: terminating on signal 2

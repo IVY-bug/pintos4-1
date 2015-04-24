@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/dir-empty-name to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/37Pyd8i6p_.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/4GFmN_bR_e.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-empty-name
@@ -27,11 +27,11 @@ Executing 'dir-empty-name':
 (dir-empty-name) end
 dir-empty-name: exit(0)
 Execution of 'dir-empty-name' complete.
-Timer: 91 ticks
-Thread: 49 idle ticks, 40 kernel ticks, 3 user ticks
+Timer: 115 ticks
+Thread: 61 idle ticks, 53 kernel ticks, 1 user ticks
 hdb1 (filesys): 448 reads, 429 writes
 hda2 (scratch): 204 reads, 2 writes
-Console: 1076 characters output
+Console: 1077 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

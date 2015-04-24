@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/dir-rmdir to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/YO1dnNY6TZ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/hdxPwe_2He.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-rmdir
@@ -29,11 +29,11 @@ Executing 'dir-rmdir':
 (dir-rmdir) end
 dir-rmdir: exit(0)
 Execution of 'dir-rmdir' complete.
-Timer: 98 ticks
-Thread: 50 idle ticks, 44 kernel ticks, 4 user ticks
+Timer: 122 ticks
+Thread: 64 idle ticks, 55 kernel ticks, 3 user ticks
 hdb1 (filesys): 454 reads, 435 writes
 hda2 (scratch): 205 reads, 2 writes
-Console: 1081 characters output
+Console: 1082 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

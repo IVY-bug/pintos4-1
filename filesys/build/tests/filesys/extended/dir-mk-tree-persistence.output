@@ -1,11 +1,11 @@
-qemu -hda /tmp/s0YfTVw6uk.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/xAWd_2lbUZ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q run 'tar fs.tar /' append fs.tar
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  156,672,000 loops/s.
 hda: 3,024 sectors (1 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 2,048 sectors (1 MB), Pintos scratch (22)
@@ -15,44 +15,15 @@ filesys: using hdb1
 scratch: using hda2
 Boot complete.
 Executing 'tar fs.tar /':
-Page fault at 0x14: not present error reading page in kernel context.
-Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e547
- cr2=00000014 error=00000000
- eax=00000000 ebx=c0039838 ecx=c0039838 edx=00000001
- esi=c010c00c edi=c010c054 esp=c003984c ebp=c010dfe8
- cs=0008 ds=0010 es=0010 ss=0001
-Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
-Call stack: 0xc0028c3e 0xc002e547.
-The `backtrace' program can make call stacks useful.
-Read "Backtraces" in the "Debugging Tools" chapter
-of the Pintos documentation for more information.
-Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
-PiLo hda1
-Loading............
-Kernel command line: -q run 'tar fs.tar /' append fs.tar
-Pintos booting with 4,088 kB RAM...
-382 pages available in kernel pool.
-382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
-hda: 3,024 sectors (1 MB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 194 sectors (97 kB), Pintos OS kernel (20)
-hda2: 2,048 sectors (1 MB), Pintos scratch (22)
-hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
-hdb1: 4,096 sectors (2 MB), Pintos file system (21)
-filesys: using hdb1
-scratch: using hda2
-Boot complete.
-Executing 'tar fs.tar /':
-fs.tar: create failed
-tar: exit(1)
+tar: exit(0)
 Execution of 'tar fs.tar /' complete.
 Appending 'fs.tar' to ustar archive on scratch device...
-Timer: 61 ticks
-Thread: 32 idle ticks, 27 kernel ticks, 2 user ticks
-hdb1 (filesys): 70 reads, 8 writes
-hda2 (scratch): 0 reads, 3 writes
-Console: 838 characters output
+Timer: 255 ticks
+Thread: 136 idle ticks, 40 kernel ticks, 79 user ticks
+hdb1 (filesys): 2721 reads, 1433 writes
+hda2 (scratch): 0 reads, 410 writes
+Console: 826 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
-Copying tests/filesys/extended/dir-mk-tree.tar out of /tmp/s0YfTVw6uk.dsk...
+Copying tests/filesys/extended/dir-mk-tree.tar out of /tmp/xAWd_2lbUZ.dsk...

@@ -1,13 +1,13 @@
 Copying tests/filesys/extended/dir-rm-parent to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/_kdu7j6G9y.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/UT1Sjk9B96.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-rm-parent
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  153,804,800 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 206 sectors (103 kB), Pintos scratch (22)
@@ -28,14 +28,14 @@ Executing 'dir-rm-parent':
 (dir-rm-parent) mkdir "b"
 (dir-rm-parent) chdir "b"
 (dir-rm-parent) remove "/a" (must fail)
-(dir-rm-parent) remove "/a" (must fail): FAILED
-dir-rm-parent: exit(1)
+(dir-rm-parent) end
+dir-rm-parent: exit(0)
 Execution of 'dir-rm-parent' complete.
-Timer: 97 ticks
-Thread: 48 idle ticks, 46 kernel ticks, 3 user ticks
-hdb1 (filesys): 452 reads, 440 writes
+Timer: 125 ticks
+Thread: 70 idle ticks, 49 kernel ticks, 6 user ticks
+hdb1 (filesys): 452 reads, 442 writes
 hda2 (scratch): 205 reads, 2 writes
-Console: 1195 characters output
+Console: 1168 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,12 +1,12 @@
 Copying tests/userprog/args-none to scratch partition...
-qemu -hda /tmp/aWVtGn5UkG.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/D1eIMDco06.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run args-none
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  150,528,000 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -26,8 +26,8 @@ Executing 'args-none':
 (args) end
 args-none: exit(0)
 Execution of 'args-none' complete.
-Timer: 87 ticks
-Thread: 39 idle ticks, 45 kernel ticks, 3 user ticks
+Timer: 97 ticks
+Thread: 50 idle ticks, 43 kernel ticks, 4 user ticks
 hda2 (filesys): 212 reads, 192 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 942 characters output

@@ -1,13 +1,13 @@
 Copying tests/filesys/extended/dir-rm-root to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/JeFwyRA9qb.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/JAOK4H0T2H.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-rm-root
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  156,876,800 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 205 sectors (102 kB), Pintos scratch (22)
@@ -28,8 +28,8 @@ Executing 'dir-rm-root':
 (dir-rm-root) end
 dir-rm-root: exit(0)
 Execution of 'dir-rm-root' complete.
-Timer: 93 ticks
-Thread: 50 idle ticks, 41 kernel ticks, 2 user ticks
+Timer: 99 ticks
+Thread: 53 idle ticks, 44 kernel ticks, 2 user ticks
 hdb1 (filesys): 451 reads, 433 writes
 hda2 (scratch): 204 reads, 2 writes
 Console: 1072 characters output
