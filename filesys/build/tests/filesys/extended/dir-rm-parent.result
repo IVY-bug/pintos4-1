@@ -1,1 +1,2 @@
-PASS
+FAIL
+run: remove "/a" (must fail): FAILED

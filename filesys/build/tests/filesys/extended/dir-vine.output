@@ -1,15 +1,15 @@
 Copying tests/filesys/extended/dir-vine to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/7mHdyMhv4l.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/fJNNG3Ipug.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
-Loading...........
+Loading............
 Kernel command line: -q -f extract run dir-vine
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
 Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 185 sectors (92 kB), Pintos OS kernel (20)
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 210 sectors (105 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -24,14 +24,48 @@ Erasing ustar archive...
 Executing 'dir-vine':
 (dir-vine) begin
 (dir-vine) creating many levels of files and directories...
-(dir-vine) open ".": FAILED
-dir-vine: exit(1)
+(dir-vine) remove "file970": FAILED
+Page fault at 0x14: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e547
+ cr2=00000014 error=00000000
+ eax=00000000 ebx=c0039838 ecx=c0039838 edx=00000001
+ esi=c012100c edi=c0121054 esp=c003984c ebp=c0122fe8
+ cs=0008 ds=0010 es=0010 ss=0001
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc002e547 0x804a9a1 0x303739Page fault at 0x656c6966: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0026647
+ cr2=656c6966 error=00000000
+ eax=00000009 ebx=656c6966 ecx=000007b4 edx=c0122c8c
+ esi=00000067 edi=c0032ebb esp=c003256c ebp=c0122d28
+ cs=0008 ds=0010 es=0010 ss=3739
+Kernel PANIC recursion at ../../userprog/exception.c:103 in kill().
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run dir-vine
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 210 sectors (105 kB), Pintos scratch (22)
+hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
+hdb1: 4,096 sectors (2 MB), Pintos file system (21)
+filesys: using hdb1
+scratch: using hda2
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'dir-vine':
+load: dir-vine: open failed
+dir-vine: exit(-1)
 Execution of 'dir-vine' complete.
-Timer: 89 ticks
-Thread: 43 idle ticks, 44 kernel ticks, 2 user ticks
-hdb1 (filesys): 458 reads, 381 writes
-hda2 (scratch): 209 reads, 2 writes
-Console: 1061 characters output
+Timer: 58 ticks
+Thread: 31 idle ticks, 26 kernel ticks, 1 user ticks
+hdb1 (filesys): 5 reads, 8 writes
+hda2 (scratch): 1 reads, 2 writes
+Console: 898 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

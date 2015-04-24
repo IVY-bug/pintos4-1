@@ -1,0 +1,233 @@
+Copying tests/filesys/extended/syn-rw.output to scratch partition...
+qemu -hda /tmp/W4cefxNsv7.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-rw-persistence
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 6 sectors (3 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'syn-rw.output' into the file system...
+Erasing ustar archive...
+Executing 'syn-rw-persistence':
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc00290c8
+ cr2=ccccccd0 error=00000002
+ eax=c010806c ebx=c010806c ecx=cccccccc edx=c010806c
+ esi=c0039800 edi=c0108000 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc00290c8 0 0.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e5e7
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010804c ecx=c010805c edx=00000001
+ esi=000000d7 edi=c0031863 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e93d
+ cr2=ccccccd8 error=00PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-rw-persistence
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 6 sectors (3 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-rw-persistence':
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc00290c8
+ cr2=ccccccd0 error=00000002
+ eax=c010806c ebx=c010806c ecx=cccccccc edx=c010806c
+ esi=c0039800 edi=c0108000 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc00290c8 0 0.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e5e7
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010804c ecx=c010805c edx=00000001
+ esi=000000d7 edi=c0031863 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eipPiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-rw-persistence
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 6 sectors (3 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-rw-persistence':
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc00290c8
+ cr2=ccccccd0 error=00000002
+ eax=c010806c ebx=c010806c ecx=cccccccc edx=c010806c
+ esi=c0039800 edi=c0108000 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc00290c8 0 0.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e5e7
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010804c ecx=c010805c edx=00000001
+ esi=000000d7 edi=c0031863 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+InPiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-rw-persistence
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 6 sectors (3 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-rw-persistence':
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc00290c8
+ cr2=ccccccd0 error=00000002
+ eax=c010806c ebx=c010806c ecx=cccccccc edx=c010806c
+ esi=c0039800 edi=c0108000 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc00290c8 0 0.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e5e7
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010804c ecx=c010805c edx=00000001
+ esi=000000d7 edi=c0031863 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e93d
+ cr2=ccccccd8 error=00000000
+ eax=cccccccc ebx=cccccccc ecx=00000780 PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-rw-persistence
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 6 sectors (3 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-rw-persistence':
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc00290c8
+ cr2=ccccccd0 error=00000002
+ eax=c010806c ebx=c010806c ecx=cccccccc edx=c010806c
+ esi=c0039800 edi=c0108000 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc00290c8 0 0.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e5e7
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010804c ecx=c010805c edx=00000001
+ esi=000000d7 edi=c0031863 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e93d
+ cr2=ccccccd8 error=00Interrupt 0000 (#DE Divide Error) in unknown segment 0000
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-rw-persistence
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  157,081,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 6 sectors (3 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-rw-persistence':
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc00290c8
+ cr2=ccccccd0 error=00000002
+ eax=c010806c ebx=c010806c ecx=cccccccc edx=c010806c
+ esi=c0039800 edi=c0108000 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc00290c8 0 0.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e5e7
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010804c ecx=c010805c edx=00000001
+ esi=000000d7 edi=c0031863 esp=00000000 ebp=c0039818
+ cs=0008 ds=0010 es=0010 ss=0000
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e93d
+ cr2=ccccccd8 error=00000000
+Simulation terminated due to kernel panic.

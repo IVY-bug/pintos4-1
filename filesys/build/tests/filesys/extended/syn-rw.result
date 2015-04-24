@@ -1,2 +1,5 @@
 FAIL
-run: open "logfile": FAILED
+Kernel panic in run: PANIC at ../../devices/block.c:112 in check_sector(): Access past end of device hdb1 (sector=4294967295, size=4096)
+Call stack: 0xc0028c3e
+Translation of call stack:
+0xc0028c3e: debug_panic (.../../lib/kernel/debug.c:38)

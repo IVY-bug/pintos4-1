@@ -1,14 +1,14 @@
 Copying tests/userprog/bad-write2 to scratch partition...
-qemu -hda /tmp/EkDEvXHyNj.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/6O5G6VJJiK.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
-Loading...........
+Loading............
 Kernel command line: -q -f extract run bad-write2
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  143,974,400 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 185 sectors (92 kB), Pintos OS kernel (20)
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
 hda3: 91 sectors (45 kB), Pintos scratch (22)
 filesys: using hda2
@@ -29,9 +29,9 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x80480a3
  cs=001b ds=0023 es=0023 ss=0023
 bad-write2: exit(-1)
 Execution of 'bad-write2' complete.
-Timer: 73 ticks
-Thread: 39 idle ticks, 29 kernel ticks, 5 user ticks
-hda2 (filesys): 211 reads, 130 writes
+Timer: 79 ticks
+Thread: 41 idle ticks, 33 kernel ticks, 5 user ticks
+hda2 (filesys): 212 reads, 192 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 1250 characters output
 Keyboard: 0 keys pressed

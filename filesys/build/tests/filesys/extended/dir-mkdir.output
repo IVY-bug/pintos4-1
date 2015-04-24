@@ -1,15 +1,15 @@
 Copying tests/filesys/extended/dir-mkdir to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/6Wq3quniAT.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/1NzfW_UIlR.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
-Loading...........
+Loading............
 Kernel command line: -q -f extract run dir-mkdir
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  150,528,000 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 185 sectors (92 kB), Pintos OS kernel (20)
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 206 sectors (103 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -27,14 +27,14 @@ Executing 'dir-mkdir':
 (dir-mkdir) create "a/b"
 (dir-mkdir) chdir "a"
 (dir-mkdir) open "b"
-(dir-mkdir) open "b": FAILED
-dir-mkdir: exit(1)
+(dir-mkdir) end
+dir-mkdir: exit(0)
 Execution of 'dir-mkdir' complete.
-Timer: 95 ticks
-Thread: 43 idle ticks, 50 kernel ticks, 2 user ticks
-hdb1 (filesys): 449 reads, 370 writes
+Timer: 101 ticks
+Thread: 53 idle ticks, 45 kernel ticks, 3 user ticks
+hdb1 (filesys): 458 reads, 442 writes
 hda2 (scratch): 205 reads, 2 writes
-Console: 1098 characters output
+Console: 1086 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

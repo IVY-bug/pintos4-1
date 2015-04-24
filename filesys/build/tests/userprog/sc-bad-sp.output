@@ -1,14 +1,14 @@
 Copying tests/userprog/sc-bad-sp to scratch partition...
-qemu -hda /tmp/P1v1i5ttrU.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/Pv5gGILSFd.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
-Loading...........
+Loading............
 Kernel command line: -q -f extract run sc-bad-sp
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  130,867,200 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 185 sectors (92 kB), Pintos OS kernel (20)
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
 hda3: 91 sectors (45 kB), Pintos scratch (22)
 filesys: using hda2
@@ -22,9 +22,9 @@ Executing 'sc-bad-sp':
 (sc-bad-sp) begin
 sc-bad-sp: exit(-1)
 Execution of 'sc-bad-sp' complete.
-Timer: 71 ticks
-Thread: 38 idle ticks, 32 kernel ticks, 1 user ticks
-hda2 (filesys): 211 reads, 130 writes
+Timer: 83 ticks
+Thread: 37 idle ticks, 46 kernel ticks, 1 user ticks
+hda2 (filesys): 212 reads, 192 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 870 characters output
 Keyboard: 0 keys pressed

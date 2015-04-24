@@ -5,4 +5,5 @@ filesys/filesys.o: ../../filesys/filesys.c ../../filesys/filesys.h \
  ../../filesys/file.h ../../filesys/free-map.h ../../devices/block.h \
  ../../lib/inttypes.h ../../filesys/inode.h ../../filesys/directory.h \
  ../../filesys/cache.h ../../devices/timer.h ../../lib/round.h \
- ../../threads/synch.h ../../lib/kernel/list.h
+ ../../threads/synch.h ../../lib/kernel/list.h ../../threads/thread.h \
+ ../../threads/synch.h ../../threads/malloc.h

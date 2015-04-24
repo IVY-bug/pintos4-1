@@ -725,3 +725,36 @@ inode_expand_double_indirect_block (struct inode *inode, size_t new_data_sectors
 	block_write (fs_device, inode->pointer[inode->direct_index], &block);
 	return new_data_sectors;
 }
+
+
+bool
+inode_is_dir (const struct inode *inode)
+{
+    return inode->isDir;
+}
+
+int
+inode_get_open_cnt (const struct inode *inode)
+{
+    return inode->open_cnt;
+}
+
+block_sector_t
+inode_get_parent (struct inode *inode)
+{
+    return inode->parent;
+}
+
+bool
+inode_add_parent (block_sector_t parent_sector, 
+		  block_sector_t child_sector)
+{
+      struct inode* inode = inode_open (child_sector);
+      if (!inode)
+      {
+	 return false;
+      }
+      inode->parent = parent_sector;
+      inode_close (inode);
+      return true;
+}

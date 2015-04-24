@@ -149,6 +149,7 @@ struct cache_block* cache_block_evict (block_sector_t sector, bool dirty)
  *  flush dirty cache block back to disk.
  */
 
+/*
 void
 cache_flush_to_disk (bool halt)
 {
@@ -169,6 +170,29 @@ cache_flush_to_disk (bool halt)
 	}
     }
    lock_release (&cache_lock);
+}
+*/
+void cache_flush_to_disk (bool halt)
+{
+  lock_acquire(&cache_lock);
+  struct list_elem *next, *e = list_begin(&cache);
+  while (e != list_end(&cache))
+    {
+      next = list_next(e);
+      struct cache_block *c = list_entry(e, struct cache_block, elem);
+      if (c->dirty)
+	{
+	  block_write (fs_device, c->sector, &c->block);
+	  c->dirty = false;
+	}
+      if (halt)
+	{
+	  list_remove(&c->elem);
+	  free(c);
+	}
+      e = next;
+    }
+  lock_release(&cache_lock);
 }
 
 /*

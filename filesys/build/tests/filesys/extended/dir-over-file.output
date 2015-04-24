@@ -1,15 +1,15 @@
 Copying tests/filesys/extended/dir-over-file to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/sREfIj49iI.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/UZiUdS6tHM.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
-Loading...........
+Loading............
 Kernel command line: -q -f extract run dir-over-file
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  143,974,400 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 185 sectors (92 kB), Pintos OS kernel (20)
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 205 sectors (102 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -25,14 +25,14 @@ Executing 'dir-over-file':
 (dir-over-file) begin
 (dir-over-file) mkdir "abc"
 (dir-over-file) create "abc" (must return false)
-(dir-over-file) create "abc" (must return false): FAILED
-dir-over-file: exit(1)
+(dir-over-file) end
+dir-over-file: exit(0)
 Execution of 'dir-over-file' complete.
-Timer: 91 ticks
-Thread: 51 idle ticks, 38 kernel ticks, 2 user ticks
-hdb1 (filesys): 447 reads, 366 writes
+Timer: 96 ticks
+Thread: 52 idle ticks, 42 kernel ticks, 3 user ticks
+hdb1 (filesys): 451 reads, 433 writes
 hda2 (scratch): 204 reads, 2 writes
-Console: 1137 characters output
+Console: 1100 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

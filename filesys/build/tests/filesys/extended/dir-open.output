@@ -1,15 +1,15 @@
 Copying tests/filesys/extended/dir-open to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/X4H2UoOHb0.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/A2KderUgr9.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
-Loading...........
+Loading............
 Kernel command line: -q -f extract run dir-open
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  104,755,200 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 185 sectors (92 kB), Pintos OS kernel (20)
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 206 sectors (103 kB), Pintos scratch (22)
 hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
 hdb1: 4,096 sectors (2 MB), Pintos file system (21)
@@ -25,14 +25,46 @@ Executing 'dir-open':
 (dir-open) begin
 (dir-open) mkdir "xyzzy"
 (dir-open) open "xyzzy"
-(dir-open) open "xyzzy": FAILED
-dir-open: exit(1)
+(dir-open) write "xyzzy"
+Page fault at 0x14: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002e547
+ cr2=00000014 error=00000000
+ eax=00000000 ebx=c0039838 ecx=00000000 edx=00000001
+ esi=ffffffff edi=c01220a8 esp=c0038324 ebp=00000002
+ cs=0008 ds=0010 es=0010 ss=0097
+Kernel PANIC at ../../userprog/exception.c:103 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc0028c3e 0xc002e547.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../devices/timer.c:259 in real_time_sleep().
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run dir-open
+Pintos booting with 4,088 kB RAM...
+382 pages available in kernel pool.
+382 pages available in user pool.
+Calibrating timer...  156,672,000 loops/s.
+hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 194 sectors (97 kB), Pintos OS kernel (20)
+hda2: 206 sectors (103 kB), Pintos scratch (22)
+hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
+hdb1: 4,096 sectors (2 MB), Pintos file system (21)
+filesys: using hdb1
+scratch: using hda2
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'dir-open':
+load: dir-open: open failed
+dir-open: exit(-1)
 Execution of 'dir-open' complete.
-Timer: 89 ticks
-Thread: 47 idle ticks, 40 kernel ticks, 2 user ticks
-hdb1 (filesys): 440 reads, 367 writes
-hda2 (scratch): 205 reads, 2 writes
-Console: 1054 characters output
+Timer: 59 ticks
+Thread: 31 idle ticks, 27 kernel ticks, 1 user ticks
+hdb1 (filesys): 5 reads, 8 writes
+hda2 (scratch): 1 reads, 2 writes
+Console: 898 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -166,3 +166,4 @@ file_tell (struct file *file)
   ASSERT (file != NULL);
   return file->pos;
 }
+
