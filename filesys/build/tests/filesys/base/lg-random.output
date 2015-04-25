@@ -1,12 +1,12 @@
 Copying tests/filesys/base/lg-random to scratch partition...
-qemu -hda /tmp/fofumB71fY.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/8RBdLN_Et7.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run lg-random
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  128,409,600 loops/s.
+Calibrating timer...  148,889,600 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -28,8 +28,8 @@ Executing 'lg-random':
 (lg-random) end
 lg-random: exit(0)
 Execution of 'lg-random' complete.
-Timer: 175 ticks
-Thread: 87 idle ticks, 56 kernel ticks, 32 user ticks
+Timer: 112 ticks
+Thread: 55 idle ticks, 36 kernel ticks, 21 user ticks
 hda2 (filesys): 818 reads, 513 writes
 hda3 (scratch): 96 reads, 2 writes
 Console: 1053 characters output

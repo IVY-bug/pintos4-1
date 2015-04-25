@@ -1,6 +1,6 @@
 Copying tests/userprog/open-boundary to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-qemu -hda /tmp/r2gVJu93tK.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/GLrIYT6xsk.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run open-boundary
@@ -26,8 +26,8 @@ Executing 'open-boundary':
 (open-boundary) end
 open-boundary: exit(0)
 Execution of 'open-boundary' complete.
-Timer: 98 ticks
-Thread: 57 idle ticks, 39 kernel ticks, 2 user ticks
+Timer: 76 ticks
+Thread: 41 idle ticks, 32 kernel ticks, 3 user ticks
 hda2 (filesys): 230 reads, 209 writes
 hda3 (scratch): 95 reads, 2 writes
 Console: 992 characters output

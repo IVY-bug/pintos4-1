@@ -1,13 +1,13 @@
 Copying tests/userprog/rox-multichild to scratch partition...
 Copying tests/userprog/child-rox to scratch partition...
-qemu -hda /tmp/bI7yTLtT0M.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/3twdZy_5Rj.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run rox-multichild
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  13,094,400 loops/s.
+Calibrating timer...  102,912,000 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -59,8 +59,8 @@ child-rox: exit(12)
 (rox-multichild) end
 rox-multichild: exit(0)
 Execution of 'rox-multichild' complete.
-Timer: 264 ticks
-Thread: 150 idle ticks, 83 kernel ticks, 32 user ticks
+Timer: 131 ticks
+Thread: 66 idle ticks, 51 kernel ticks, 14 user ticks
 hda2 (filesys): 690 reads, 425 writes
 hda3 (scratch): 194 reads, 2 writes
 Console: 1906 characters output

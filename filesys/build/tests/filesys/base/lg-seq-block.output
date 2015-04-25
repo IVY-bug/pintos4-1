@@ -1,12 +1,12 @@
 Copying tests/filesys/base/lg-seq-block to scratch partition...
-qemu -hda /tmp/gNGRcRNugA.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/M2yBy7SBPF.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run lg-seq-block
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  153,804,800 loops/s.
+Calibrating timer...  155,443,200 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -30,8 +30,8 @@ Executing 'lg-seq-block':
 (lg-seq-block) end
 lg-seq-block: exit(0)
 Execution of 'lg-seq-block' complete.
-Timer: 222 ticks
-Thread: 135 idle ticks, 50 kernel ticks, 37 user ticks
+Timer: 190 ticks
+Thread: 103 idle ticks, 41 kernel ticks, 46 user ticks
 hda2 (filesys): 958 reads, 506 writes
 hda3 (scratch): 94 reads, 2 writes
 Console: 1152 characters output

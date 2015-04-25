@@ -1,4 +1,4 @@
-qemu -hda /tmp/v4Ei4tzWDQ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/uWqbsjoVIr.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q run 'tar fs.tar /' append fs.tar
@@ -18,12 +18,12 @@ Executing 'tar fs.tar /':
 tar: exit(0)
 Execution of 'tar fs.tar /' complete.
 Appending 'fs.tar' to ustar archive on scratch device...
-Timer: 207 ticks
-Thread: 105 idle ticks, 50 kernel ticks, 52 user ticks
+Timer: 132 ticks
+Thread: 73 idle ticks, 35 kernel ticks, 24 user ticks
 hdb1 (filesys): 1455 reads, 634 writes
 hda2 (scratch): 0 reads, 210 writes
-Console: 825 characters output
+Console: 824 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
-Copying tests/filesys/extended/dir-over-file.tar out of /tmp/v4Ei4tzWDQ.dsk...
+Copying tests/filesys/extended/dir-over-file.tar out of /tmp/uWqbsjoVIr.dsk...

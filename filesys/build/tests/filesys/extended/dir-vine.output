@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/dir-vine to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/3OvrO1JDWJ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/qlqfOkRmuZ.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-vine
@@ -27,11 +27,11 @@ Executing 'dir-vine':
 (dir-vine) remove "file970": FAILED
 dir-vine: exit(1)
 Execution of 'dir-vine' complete.
-Timer: 2132 ticks
-Thread: 1004 idle ticks, 54 kernel ticks, 1074 user ticks
-hdb1 (filesys): 6282 reads, 10155 writes
+Timer: 1567 ticks
+Thread: 550 idle ticks, 41 kernel ticks, 976 user ticks
+hdb1 (filesys): 6282 reads, 10151 writes
 hda2 (scratch): 209 reads, 2 writes
-Console: 1079 characters output
+Console: 1077 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,6 +1,6 @@
 Copying tests/userprog/exec-arg to scratch partition...
 Copying tests/userprog/child-args to scratch partition...
-qemu -hda /tmp/06oonbs5Wj.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/lv5ggF3Yw1.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run exec-arg
@@ -32,8 +32,8 @@ child-args: exit(0)
 (exec-arg) end
 exec-arg: exit(0)
 Execution of 'exec-arg' complete.
-Timer: 150 ticks
-Thread: 87 idle ticks, 59 kernel ticks, 5 user ticks
+Timer: 134 ticks
+Thread: 79 idle ticks, 49 kernel ticks, 6 user ticks
 hda2 (filesys): 452 reads, 378 writes
 hda3 (scratch): 179 reads, 2 writes
 Console: 1066 characters output

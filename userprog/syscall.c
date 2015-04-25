@@ -184,20 +184,20 @@ sys_read (int file_desc, char *buf, unsigned s)
 		 		 	return s; 
 		 		 }
 		 }
-//        lock_acquire (&file_lock);	
+        lock_acquire (&file_lock);	
 	struct file_struct* file_ptr = get_file_struct_handle (file_desc);
 	if (file_ptr == NULL)
 	{
-//		lock_release (&file_lock);
+		lock_release (&file_lock);
 		return -1;
 	}
         if (file_ptr->isdir){
-//               lock_release (&file_lock);
+               lock_release (&file_lock);
 		return -1;
         }
 	//printf("Got Fd...\n");
 	off_t bytes_read = file_read (file_ptr->file, buf, s);
-//	lock_release (&file_lock);
+	lock_release (&file_lock);
 	return bytes_read;
 
 }
@@ -215,9 +215,9 @@ sys_filesize (int file_desc)
 bool
 sys_remove (const char *file)
 {
-//	lock_acquire (&file_lock);
+	lock_acquire (&file_lock);
 	bool status = filesys_remove (file);
-//	lock_release (&file_lock);
+	lock_release (&file_lock);
 	return status;	
 }
 
@@ -230,9 +230,9 @@ sys_create (const char *file, unsigned size)
 		 }
 	validate_ptr (file);
 	validate_page (file);
-//	lock_acquire (&file_lock);
+	lock_acquire (&file_lock);
 	bool status = filesys_create (file, size, false);
-//	lock_release (&file_lock);
+	lock_release (&file_lock);
 	return status;
 }
 
@@ -282,13 +282,13 @@ sys_open (const char *file)
 		 }
 	validate_ptr (file);	 
 	validate_page (file);	 
-//	lock_acquire (&file_lock);
+	lock_acquire (&file_lock);
 	struct file *handle = filesys_open (file);
 
 	if (handle == NULL)
 		 {
 	//	 	printf("handle null...\n");
-//		 	lock_release (&file_lock);
+		 	lock_release (&file_lock);
 		 	//sys_exit(-1);
 		 	return -1;
 		 }
@@ -297,7 +297,7 @@ sys_open (const char *file)
 	if (file_ptr == NULL)
 		 {
 	//	 	printf("no memory allocated..\n");
-//		 	lock_release (&file_lock);
+		 	lock_release (&file_lock);
 		 	return -1;
 		 }
         
@@ -323,7 +323,7 @@ sys_open (const char *file)
 	    	file_deny_write (handle);
 	 }
 
-//	lock_release (&file_lock);	 
+	lock_release (&file_lock);	 
 
 
 /*
@@ -355,27 +355,27 @@ sys_write (int file_desc, const void *buffer, unsigned size)
 	 	return size;
 	 }
 
-//	 lock_acquire (&file_lock);
+	 lock_acquire (&file_lock);
 	// struct file *file_ptr = get_file_handle (file_desc);
 	// printf("write 2\n");
 	 //if lock doesn't acquired then return
 	 struct file_struct *file_struct = get_file_struct_handle (file_desc);
          if (file_struct == NULL)
 	 	 {
-//	 	 	lock_release (&file_lock);
+	 	 	lock_release (&file_lock);
 	 	 	sys_exit (-1);
 	 	 }
  
 	// printf("write 3\n");	 
          if (file_struct->isdir)
          {
-//              lock_release(&file_lock);
+              lock_release(&file_lock);
 	      sys_exit(-1);
          }
 
 	 int bytes_wrriten = file_write (file_struct->file, buffer, size);
 	// printf("Wrriten to file bytes:%d\n",bytes_wrriten );
-//	 lock_release (&file_lock);
+	 lock_release (&file_lock);
 	 return bytes_wrriten;	 
 }
 

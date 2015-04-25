@@ -1,12 +1,12 @@
 Copying tests/userprog/bad-read2 to scratch partition...
-qemu -hda /tmp/3FPRIntVtJ.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/wqtSzA2WnY.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run bad-read2
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  78,540,800 loops/s.
+Calibrating timer...  111,206,400 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -29,8 +29,8 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x80480a3
  cs=001b ds=0023 es=0023 ss=0023
 bad-read2: exit(-1)
 Execution of 'bad-read2' complete.
-Timer: 123 ticks
-Thread: 64 idle ticks, 54 kernel ticks, 6 user ticks
+Timer: 80 ticks
+Thread: 40 idle ticks, 35 kernel ticks, 5 user ticks
 hda2 (filesys): 215 reads, 194 writes
 hda3 (scratch): 91 reads, 2 writes
 Console: 1243 characters output

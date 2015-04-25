@@ -1,13 +1,13 @@
 Copying tests/filesys/extended/dir-open to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/Uwa3nUmRm0.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/ff34Ox__yP.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-open
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  127,590,400 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 206 sectors (103 kB), Pintos scratch (22)
@@ -28,11 +28,11 @@ Executing 'dir-open':
 (dir-open) write "xyzzy"
 dir-open: exit(-1)
 Execution of 'dir-open' complete.
-Timer: 232 ticks
-Thread: 115 idle ticks, 109 kernel ticks, 9 user ticks
+Timer: 93 ticks
+Thread: 46 idle ticks, 45 kernel ticks, 3 user ticks
 hdb1 (filesys): 446 reads, 435 writes
 hda2 (scratch): 205 reads, 2 writes
-Console: 1051 characters output
+Console: 1048 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -113,7 +113,7 @@ struct cache_block* cache_block_evict (block_sector_t sector, bool dirty)
 {
 
     struct cache_block *c;
-    if (cache_size < MAX_CACHE_SIZE)
+/*    if (cache_size < MAX_CACHE_SIZE)
     {
         cache_size++;
         c = malloc (sizeof (struct cache_block));
@@ -126,7 +126,7 @@ struct cache_block* cache_block_evict (block_sector_t sector, bool dirty)
     }
     else
     {
-      bool flag = true;
+  */    bool flag = true;
       while (flag)
       {
         struct list_elem *e;
@@ -152,7 +152,7 @@ struct cache_block* cache_block_evict (block_sector_t sector, bool dirty)
   		}
  	}
       }
-     }
+   //  }
     //pay attention to here!!!!!!!!
     c->open_cnt++;
     c->sector = sector;

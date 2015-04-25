@@ -1,14 +1,14 @@
 Copying tests/filesys/extended/syn-rw to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
 Copying tests/filesys/extended/child-syn-rw to scratch partition...
-qemu -hda /tmp/HXH5QTJYGL.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/QZ2iEBB5r1.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run syn-rw
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  150,732,800 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 311 sectors (155 kB), Pintos scratch (22)
@@ -31,9 +31,9 @@ Executing 'syn-rw':
 (syn-rw) exec child 2 of 4: "child-syn-rw 1"
 (syn-rw) exec child 3 of 4: "child-syn-rw 2"
 (syn-rw) exec child 4 of 4: "child-syn-rw 3"
-child-syn-rw: exit(1)
-child-syn-rw: exit(3)
 child-syn-rw: exit(2)
+child-syn-rw: exit(3)
+child-syn-rw: exit(1)
 child-syn-rw: exit(0)
 (syn-rw) wait for child 1 of 4 returned 0 (expected 0)
 (syn-rw) wait for child 2 of 4 returned 1 (expected 1)
@@ -42,9 +42,9 @@ child-syn-rw: exit(0)
 (syn-rw) end
 syn-rw: exit(0)
 Execution of 'syn-rw' complete.
-Timer: 871 ticks
-Thread: 77 idle ticks, 59 kernel ticks, 735 user ticks
-hdb1 (filesys): 1174 reads, 681 writes
+Timer: 915 ticks
+Thread: 65 idle ticks, 62 kernel ticks, 789 user ticks
+hdb1 (filesys): 1184 reads, 683 writes
 hda2 (scratch): 310 reads, 2 writes
 Console: 1563 characters output
 Keyboard: 0 keys pressed

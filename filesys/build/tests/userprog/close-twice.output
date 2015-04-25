@@ -1,13 +1,13 @@
 Copying tests/userprog/close-twice to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-qemu -hda /tmp/BoSYBarT3P.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/SQE6YwqI1j.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run close-twice
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  130,867,200 loops/s.
+Calibrating timer...  183,296,000 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -28,8 +28,8 @@ Executing 'close-twice':
 (close-twice) end
 close-twice: exit(0)
 Execution of 'close-twice' complete.
-Timer: 80 ticks
-Thread: 42 idle ticks, 36 kernel ticks, 2 user ticks
+Timer: 79 ticks
+Thread: 40 idle ticks, 35 kernel ticks, 4 user ticks
 hda2 (filesys): 226 reads, 205 writes
 hda3 (scratch): 93 reads, 2 writes
 Console: 1048 characters output

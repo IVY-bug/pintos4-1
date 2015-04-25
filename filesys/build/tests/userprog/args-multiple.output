@@ -1,12 +1,12 @@
 Copying tests/userprog/args-multiple to scratch partition...
-qemu -hda /tmp/H8uk27MzEk.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/o1uaL5O6WH.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run 'args-multiple some arguments for you!'
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  52,377,600 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -30,11 +30,11 @@ Executing 'args-multiple some arguments for you!':
 (args) end
 args-multiple: exit(0)
 Execution of 'args-multiple some arguments for you!' complete.
-Timer: 75 ticks
-Thread: 39 idle ticks, 32 kernel ticks, 4 user ticks
+Timer: 77 ticks
+Thread: 43 idle ticks, 31 kernel ticks, 3 user ticks
 hda2 (filesys): 212 reads, 192 writes
 hda3 (scratch): 90 reads, 2 writes
-Console: 1139 characters output
+Console: 1140 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
