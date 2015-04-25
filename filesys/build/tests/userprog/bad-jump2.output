@@ -1,12 +1,12 @@
 Copying tests/userprog/bad-jump2 to scratch partition...
-qemu -hda /tmp/NTjD6oQv9_.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/6MCCYFHvVO.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run bad-jump2
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  150,528,000 loops/s.
+Calibrating timer...  39,116,800 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -29,8 +29,8 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0000000
  cs=001b ds=0023 es=0023 ss=0023
 bad-jump2: exit(-1)
 Execution of 'bad-jump2' complete.
-Timer: 90 ticks
-Thread: 45 idle ticks, 40 kernel ticks, 5 user ticks
+Timer: 103 ticks
+Thread: 54 idle ticks, 45 kernel ticks, 5 user ticks
 hda2 (filesys): 215 reads, 194 writes
 hda3 (scratch): 91 reads, 2 writes
 Console: 1244 characters output

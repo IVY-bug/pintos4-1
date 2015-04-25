@@ -95,7 +95,7 @@ pass tests/filesys/extended/grow-seq-sm
 pass tests/filesys/extended/grow-sparse
 pass tests/filesys/extended/grow-tell
 pass tests/filesys/extended/grow-two-files
-FAIL tests/filesys/extended/syn-rw
+pass tests/filesys/extended/syn-rw
 pass tests/filesys/extended/dir-empty-name-persistence
 pass tests/filesys/extended/dir-mk-tree-persistence
 pass tests/filesys/extended/dir-mkdir-persistence
@@ -118,4 +118,4 @@ pass tests/filesys/extended/grow-seq-sm-persistence
 pass tests/filesys/extended/grow-sparse-persistence
 pass tests/filesys/extended/grow-tell-persistence
 pass tests/filesys/extended/grow-two-files-persistence
-FAIL tests/filesys/extended/syn-rw-persistence
+pass tests/filesys/extended/syn-rw-persistence

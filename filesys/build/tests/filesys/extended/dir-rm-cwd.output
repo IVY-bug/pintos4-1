@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/dir-rm-cwd to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/KAe5N5GWWT.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/awCowTmFlu.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-rm-cwd
@@ -47,11 +47,11 @@ Executing 'dir-rm-cwd':
 (dir-rm-cwd) end
 dir-rm-cwd: exit(0)
 Execution of 'dir-rm-cwd' complete.
-Timer: 99 ticks
-Thread: 56 idle ticks, 34 kernel ticks, 9 user ticks
+Timer: 152 ticks
+Thread: 83 idle ticks, 54 kernel ticks, 15 user ticks
 hdb1 (filesys): 458 reads, 441 writes
 hda2 (scratch): 209 reads, 2 writes
-Console: 1738 characters output
+Console: 1740 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

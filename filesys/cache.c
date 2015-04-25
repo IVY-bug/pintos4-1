@@ -86,6 +86,8 @@ struct cache_block* cache_block_get (block_sector_t sector, bool dirty)
  */
 struct cache_block* read_block_from_disk (block_sector_t sector, bool dirty)
 {
+    
+//    lock_acquire (&cache_lock);
     cache_size ++;
     struct cache_block *c = malloc (sizeof (struct cache_block));
     if (!c)
@@ -98,6 +100,7 @@ struct cache_block* read_block_from_disk (block_sector_t sector, bool dirty)
     block_read (fs_device, c->sector, &c->block);
     c->dirty = dirty;
     c->accessed = true;
+//    lock_release (&cache_lock);
     return c;
 }
 

@@ -1,13 +1,13 @@
 Copying tests/filesys/extended/grow-root-sm to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/fO5XJ9gpyl.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/joV_p8s2cT.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run grow-root-sm
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  153,804,800 loops/s.
+Calibrating timer...  156,876,800 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 207 sectors (103 kB), Pintos scratch (22)
@@ -46,8 +46,8 @@ Executing 'grow-root-sm':
 (grow-root-sm) end
 grow-root-sm: exit(0)
 Execution of 'grow-root-sm' complete.
-Timer: 131 ticks
-Thread: 61 idle ticks, 47 kernel ticks, 23 user ticks
+Timer: 125 ticks
+Thread: 60 idle ticks, 47 kernel ticks, 18 user ticks
 hdb1 (filesys): 571 reads, 592 writes
 hda2 (scratch): 206 reads, 2 writes
 Console: 1928 characters output

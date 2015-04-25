@@ -1,2 +1,1 @@
-FAIL
-Prerequisite test tests/filesys/extended/syn-rw failed.
+PASS

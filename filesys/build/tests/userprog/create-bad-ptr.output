@@ -1,12 +1,12 @@
 Copying tests/userprog/create-bad-ptr to scratch partition...
-qemu -hda /tmp/0CcHZ3qGSy.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/gr5LLj9yKu.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run create-bad-ptr
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  156,876,800 loops/s.
+Calibrating timer...  104,755,200 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -22,8 +22,8 @@ Executing 'create-bad-ptr':
 (create-bad-ptr) begin
 create-bad-ptr: exit(-1)
 Execution of 'create-bad-ptr' complete.
-Timer: 88 ticks
-Thread: 49 idle ticks, 38 kernel ticks, 1 user ticks
+Timer: 75 ticks
+Thread: 40 idle ticks, 34 kernel ticks, 1 user ticks
 hda2 (filesys): 212 reads, 192 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 900 characters output

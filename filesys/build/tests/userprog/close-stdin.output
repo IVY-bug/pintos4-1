@@ -1,12 +1,12 @@
 Copying tests/userprog/close-stdin to scratch partition...
-qemu -hda /tmp/OiG44VT5RS.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/uiQIXdHtDr.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run close-stdin
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  152,371,200 loops/s.
+Calibrating timer...  152,985,600 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -23,8 +23,8 @@ Executing 'close-stdin':
 (close-stdin) end
 close-stdin: exit(0)
 Execution of 'close-stdin' complete.
-Timer: 78 ticks
-Thread: 41 idle ticks, 36 kernel ticks, 1 user ticks
+Timer: 83 ticks
+Thread: 42 idle ticks, 40 kernel ticks, 2 user ticks
 hda2 (filesys): 212 reads, 192 writes
 hda3 (scratch): 90 reads, 2 writes
 Console: 899 characters output

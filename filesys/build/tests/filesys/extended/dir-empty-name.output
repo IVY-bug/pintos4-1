@@ -1,13 +1,13 @@
 Copying tests/filesys/extended/dir-empty-name to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/4GFmN_bR_e.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/1RB1hibPrs.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-empty-name
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  6,547,200 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 205 sectors (102 kB), Pintos scratch (22)
@@ -27,11 +27,11 @@ Executing 'dir-empty-name':
 (dir-empty-name) end
 dir-empty-name: exit(0)
 Execution of 'dir-empty-name' complete.
-Timer: 115 ticks
-Thread: 61 idle ticks, 53 kernel ticks, 1 user ticks
+Timer: 190 ticks
+Thread: 113 idle ticks, 71 kernel ticks, 7 user ticks
 hdb1 (filesys): 448 reads, 429 writes
 hda2 (scratch): 204 reads, 2 writes
-Console: 1077 characters output
+Console: 1076 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

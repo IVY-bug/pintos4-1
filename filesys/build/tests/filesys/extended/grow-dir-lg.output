@@ -1,13 +1,13 @@
 Copying tests/filesys/extended/grow-dir-lg to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/PLtXPcYvQm.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/WSBFydVyYq.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run grow-dir-lg
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  130,867,200 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 207 sectors (103 kB), Pintos scratch (22)
@@ -77,8 +77,8 @@ Executing 'grow-dir-lg':
 (grow-dir-lg) end
 grow-dir-lg: exit(0)
 Execution of 'grow-dir-lg' complete.
-Timer: 219 ticks
-Thread: 113 idle ticks, 58 kernel ticks, 48 user ticks
+Timer: 238 ticks
+Thread: 124 idle ticks, 56 kernel ticks, 58 user ticks
 hdb1 (filesys): 899 reads, 989 writes
 hda2 (scratch): 206 reads, 2 writes
 Console: 3425 characters output

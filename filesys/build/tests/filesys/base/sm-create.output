@@ -1,12 +1,12 @@
 Copying tests/filesys/base/sm-create to scratch partition...
-qemu -hda /tmp/XO7mFISHw8.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/ncvKAcPXZ6.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run sm-create
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  52,377,600 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -27,8 +27,8 @@ Executing 'sm-create':
 (sm-create) end
 sm-create: exit(0)
 Execution of 'sm-create' complete.
-Timer: 80 ticks
-Thread: 41 idle ticks, 35 kernel ticks, 4 user ticks
+Timer: 140 ticks
+Thread: 78 idle ticks, 61 kernel ticks, 2 user ticks
 hda2 (filesys): 249 reads, 220 writes
 hda3 (scratch): 94 reads, 2 writes
 Console: 1029 characters output

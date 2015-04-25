@@ -1,13 +1,13 @@
 Copying tests/userprog/exec-multiple to scratch partition...
 Copying tests/userprog/child-simple to scratch partition...
-qemu -hda /tmp/xTTsW83Cm0.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/3IbRNZ0_dj.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run exec-multiple
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
+Calibrating timer...  117,760,000 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -33,11 +33,11 @@ child-simple: exit(81)
 (exec-multiple) end
 exec-multiple: exit(0)
 Execution of 'exec-multiple' complete.
-Timer: 112 ticks
-Thread: 63 idle ticks, 41 kernel ticks, 8 user ticks
+Timer: 158 ticks
+Thread: 88 idle ticks, 53 kernel ticks, 18 user ticks
 hda2 (filesys): 612 reads, 386 writes
 hda3 (scratch): 180 reads, 2 writes
-Console: 1131 characters output
+Console: 1132 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

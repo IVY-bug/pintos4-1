@@ -1,14 +1,14 @@
 Copying tests/userprog/multi-child-fd to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
 Copying tests/userprog/child-close to scratch partition...
-qemu -hda /tmp/PgK5G2EvRT.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/mdpgd7jZn4.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run multi-child-fd
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  150,528,000 loops/s.
+Calibrating timer...  104,755,200 loops/s.
 hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 4,096 sectors (2 MB), Pintos file system (21)
@@ -33,11 +33,11 @@ child-close: exit(0)
 (multi-child-fd) end
 multi-child-fd: exit(0)
 Execution of 'multi-child-fd' complete.
-Timer: 108 ticks
-Thread: 54 idle ticks, 50 kernel ticks, 5 user ticks
+Timer: 151 ticks
+Thread: 82 idle ticks, 59 kernel ticks, 11 user ticks
 hda2 (filesys): 482 reads, 414 writes
 hda3 (scratch): 194 reads, 2 writes
-Console: 1193 characters output
+Console: 1194 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

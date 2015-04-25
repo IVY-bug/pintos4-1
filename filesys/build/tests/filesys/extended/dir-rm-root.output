@@ -1,6 +1,6 @@
 Copying tests/filesys/extended/dir-rm-root to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
-qemu -hda /tmp/JAOK4H0T2H.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/fPS0CNGudT.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run dir-rm-root
@@ -28,11 +28,11 @@ Executing 'dir-rm-root':
 (dir-rm-root) end
 dir-rm-root: exit(0)
 Execution of 'dir-rm-root' complete.
-Timer: 99 ticks
-Thread: 53 idle ticks, 44 kernel ticks, 2 user ticks
+Timer: 158 ticks
+Thread: 92 idle ticks, 62 kernel ticks, 5 user ticks
 hdb1 (filesys): 451 reads, 433 writes
 hda2 (scratch): 204 reads, 2 writes
-Console: 1072 characters output
+Console: 1073 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

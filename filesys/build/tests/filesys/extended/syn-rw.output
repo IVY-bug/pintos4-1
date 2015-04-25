@@ -1,14 +1,14 @@
 Copying tests/filesys/extended/syn-rw to scratch partition...
 Copying tests/filesys/extended/tar to scratch partition...
 Copying tests/filesys/extended/child-syn-rw to scratch partition...
-qemu -hda /tmp/iSlZ04HjpV.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/HXH5QTJYGL.dsk -hdb tmp.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading............
 Kernel command line: -q -f extract run syn-rw
 Pintos booting with 4,088 kB RAM...
 382 pages available in kernel pool.
 382 pages available in user pool.
-Calibrating timer...  104,755,200 loops/s.
+Calibrating timer...  157,081,600 loops/s.
 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
 hda1: 194 sectors (97 kB), Pintos OS kernel (20)
 hda2: 311 sectors (155 kB), Pintos scratch (22)
@@ -31,40 +31,22 @@ Executing 'syn-rw':
 (syn-rw) exec child 2 of 4: "child-syn-rw 1"
 (syn-rw) exec child 3 of 4: "child-syn-rw 2"
 (syn-rw) exec child 4 of 4: "child-syn-rw 3"
-Kernel PANIC at ../../devices/block.c:112 in check_sector(): Access past end of device hdb1 (sector=4294967295, size=4096)
-
-Call stack: 0xc0028c3e.
-The `backtrace' program can make call stacks useful.
-Read "Backtraces" in the "Debugging Tools" chapter
-of the Pintos documentation for more information.
-Kernel PANIC recursion at ../../threads/synch.c:215 in lock_acquire().
-PiLo hda1
-Loading............
-Kernel command line: -q -f extract run syn-rw
-Pintos booting with 4,088 kB RAM...
-382 pages available in kernel pool.
-382 pages available in user pool.
-Calibrating timer...  157,081,600 loops/s.
-hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK"
-hda1: 194 sectors (97 kB), Pintos OS kernel (20)
-hda2: 311 sectors (155 kB), Pintos scratch (22)
-hdb: 5,040 sectors (2 MB), model "QM00002", serial "QEMU HARDDISK"
-hdb1: 4,096 sectors (2 MB), Pintos file system (21)
-filesys: using hdb1
-scratch: using hda2
-Formatting file system...done.
-Boot complete.
-Extracting ustar archive from scratch device into file system...
-Erasing ustar archive...
-Executing 'syn-rw':
-load: syn-rw: open failed
-syn-rw: exit(-1)
+child-syn-rw: exit(1)
+child-syn-rw: exit(3)
+child-syn-rw: exit(2)
+child-syn-rw: exit(0)
+(syn-rw) wait for child 1 of 4 returned 0 (expected 0)
+(syn-rw) wait for child 2 of 4 returned 1 (expected 1)
+(syn-rw) wait for child 3 of 4 returned 2 (expected 2)
+(syn-rw) wait for child 4 of 4 returned 3 (expected 3)
+(syn-rw) end
+syn-rw: exit(0)
 Execution of 'syn-rw' complete.
-Timer: 64 ticks
-Thread: 33 idle ticks, 31 kernel ticks, 1 user ticks
-hdb1 (filesys): 5 reads, 8 writes
-hda2 (scratch): 1 reads, 2 writes
-Console: 888 characters output
+Timer: 871 ticks
+Thread: 77 idle ticks, 59 kernel ticks, 735 user ticks
+hdb1 (filesys): 1174 reads, 681 writes
+hda2 (scratch): 310 reads, 2 writes
+Console: 1563 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
